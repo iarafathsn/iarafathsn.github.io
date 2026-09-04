@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From University Student to MNC-Ready Software Engineer</title>
+<style>
+:root{
+  --bg:#f6f7fb;--ink:#111827;--muted:#667085;--card:#fff;--line:#e5e7eb;
+  --accent:#2563eb;--accent2:#7c3aed;--good:#15803d;--warn:#b45309;
+}
+*{box-sizing:border-box} html,body{margin:0;height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+body{overflow:hidden}.deck{height:100vh;position:relative}.slide{display:none;height:100vh;padding:6vh 8vw 7vh;position:relative;overflow:hidden}
+.slide.active{display:flex;flex-direction:column;justify-content:center}
+.kicker{font-size:.9rem;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:800;margin-bottom:14px}
+h1{font-size:clamp(2.8rem,6vw,6rem);line-height:.98;letter-spacing:-.055em;margin:0 0 22px;max-width:1050px}
+h2{font-size:clamp(2rem,4vw,4rem);line-height:1.02;letter-spacing:-.04em;margin:0 0 24px}
+h3{margin:0 0 10px;font-size:1.25rem} p{font-size:clamp(1rem,1.45vw,1.35rem);line-height:1.55;color:var(--muted);max-width:900px}
+.small{font-size:.95rem;color:var(--muted)} .big{font-size:clamp(1.5rem,3vw,2.6rem);line-height:1.2;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:1050px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1100px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 10px 30px rgba(16,24,40,.05)}
+.card strong{display:block;font-size:1.2rem;margin-bottom:8px}.card p{font-size:1rem;margin:0}
+.timeline{display:flex;align-items:stretch;gap:0;max-width:1100px;margin-top:15px}.step{flex:1;position:relative;padding:22px 18px;background:#fff;border:1px solid var(--line)}.step:first-child{border-radius:18px 0 0 18px}.step:last-child{border-radius:0 18px 18px 0}.year{font-weight:800;color:var(--accent);font-size:.9rem}.step b{display:block;font-size:1.2rem;margin:8px 0}.step span{color:var(--muted)}
+.quote{border-left:5px solid var(--accent);padding:8px 0 8px 24px;font-size:clamp(1.4rem,2.8vw,2.5rem);font-weight:750;line-height:1.25;max-width:900px}
+.pillrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.pill{padding:10px 15px;border-radius:999px;background:#eaf0ff;color:#1745a4;font-weight:700}
+.center{text-align:center;align-items:center}.center p{margin-left:auto;margin-right:auto}
+.num{font-size:3rem;font-weight:900;color:var(--accent);line-height:1}.poll{cursor:pointer;transition:.2s;user-select:none}.poll:hover{transform:translateY(-3px);border-color:#b8c7ff}.poll.selected{outline:3px solid var(--accent);background:#eef4ff}.poll .answer{display:none;margin-top:12px;color:var(--good);font-weight:700}.poll.selected .answer{display:block}
+.progress{position:fixed;left:0;bottom:0;height:4px;background:var(--accent);width:0;z-index:10}.controls{position:fixed;right:24px;bottom:18px;z-index:11;display:flex;gap:8px}.btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;cursor:pointer;font-weight:700}.counter{position:fixed;left:24px;bottom:18px;color:var(--muted);font-size:.85rem;z-index:11}
+.note{position:fixed;right:24px;top:20px;z-index:12}.notes{display:none;position:fixed;right:24px;top:58px;width:min(420px,80vw);max-height:70vh;overflow:auto;background:#111827;color:#fff;border-radius:16px;padding:20px;box-shadow:0 20px 50px rgba(0,0,0,.25);z-index:12}.notes.show{display:block}.notes p{color:#d1d5db;font-size:.95rem}.notes b{color:#fff}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:900px}.check{background:#fff;border:1px solid var(--line);padding:15px 18px;border-radius:14px;font-weight:650}.check:before{content:"✓";color:var(--good);font-weight:900;margin-right:10px}
+.ai{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:22px;max-width:1000px}.arrow{font-size:3rem;color:var(--accent)}.ai .card{min-height:180px}
+.footer{position:absolute;right:8vw;bottom:7vh;color:#98a2b3;font-size:.8rem}
+@media(max-width:800px){.slide{padding:8vh 7vw}.grid,.grid3,.checklist,.ai{grid-template-columns:1fr}.timeline{flex-direction:column}.step:first-child,.step:last-child{border-radius:18px}.controls{display:none}h1{font-size:3.2rem}h2{font-size:2.5rem}}
+@media print{body{overflow:visible}.slide{display:flex!important;page-break-after:always;height:100vh}.controls,.counter,.progress,.note,.notes{display:none!important}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<section class="slide active center" data-note="Open warmly. Do not read the title. Say you are not here to reveal Samsung internals; you are sharing lessons from 13+ years in industry.">
+<div class="kicker">Career Guideline & Preparation</div>
+<h1>From University Student<br>to MNC-Ready<br>Software Engineer</h1>
+<p>Practical guidance for CS students preparing for multinational technology companies in Bangladesh.</p>
+<div class="pillrow"><span class="pill">Fundamentals</span><span class="pill">Problem Solving</span><span class="pill">Evidence</span><span class="pill">Adaptability</span></div>
+<div class="footer">30-minute webinar</div>
+</section>
+
+<section class="slide" data-note="Tell your story conversationally: RUET → first job → Samsung. Mention ICPC/UVA briefly as evidence of your early interest in problem solving.">
+<div class="kicker">01 · My journey</div><h2>I was a student too.</h2>
+<div class="timeline">
+<div class="step"><div class="year">2010</div><b>ICPC · Dhaka</b><span>Started taking competitive programming seriously.</span></div>
+<div class="step"><div class="year">2012</div><b>RUET → Graduation</b><span>Bachelor's degree in Computer Science.</span></div>
+<div class="step"><div class="year">2012</div><b>RTC Hubs</b><span>Started my career as an iOS Developer.</span></div>
+<div class="step"><div class="year">2013 → Now</div><b>Samsung R&D</b><span>13+ years of industry experience.</span></div>
+</div>
+<p class="quote" style="margin-top:30px">The technologies changed. The fundamentals stayed.</p>
+</section>
+
+<section class="slide center" data-note="Ask: 'What do you think an MNC expects from a fresh graduate?' Take 2–3 answers before revealing the four pillars.">
+<div class="kicker">02 · Before we talk about jobs</div><h2>What does an MNC<br>actually look for?</h2>
+<p class="big">Not someone who knows everything.</p>
+<div class="grid3" style="margin-top:25px">
+<div class="card poll"><div class="num">01</div><strong>Fundamentals</strong><p>Programming + CS basics</p><div class="answer">Strong base beats a long tech list.</div></div>
+<div class="card poll"><div class="num">02</div><strong>Problem solving</strong><p>Think, break down, reason</p><div class="answer">How you approach matters.</div></div>
+<div class="card poll"><div class="num">03</div><strong>Learning ability</strong><p>Adapt when technology changes</p><div class="answer">You will keep learning.</div></div>
+</div>
+</section>
+
+<section class="slide" data-note="Emphasize that freshers are not expected to be experts. The goal is depth in foundations, not breadth in buzzwords.">
+<div class="kicker">03 · The trap</div><h2>Don't try to learn<br>everything.</h2>
+<div class="grid">
+<div class="card"><strong>❌ The “everything” path</strong><p>10 languages · 8 frameworks · AI · Cloud · DevOps · Cybersecurity · …</p></div>
+<div class="card"><strong>✓ The better path</strong><p>One strong programming foundation → DSA → projects → one area of interest.</p></div>
+</div>
+<p class="quote" style="margin-top:30px">Depth first. Breadth later.</p>
+</section>
+
+<section class="slide" data-note="Give students a simple year-by-year roadmap. Avoid implying every student must follow exactly the same timeline.">
+<div class="kicker">04 · University roadmap</div><h2>Build in layers.</h2>
+<div class="grid3">
+<div class="card"><strong>1st–2nd year</strong><p>Programming fundamentals<br>University coursework<br>Small problems</p></div>
+<div class="card"><strong>2nd–3rd year</strong><p>DSA<br>Regular problem solving<br>First meaningful projects</p></div>
+<div class="card"><strong>3rd–4th year</strong><p>Projects + GitHub<br>Internship<br>Interview preparation</p></div>
+</div>
+</section>
+
+<section class="slide" data-note="Connect your ICPC/UVA experience here. Explain that the value of algorithms is not memorizing tricks; it is learning to reason about unfamiliar problems.">
+<div class="kicker">05 · Core CS skill</div><h2>Problem solving<br>before coding.</h2>
+<div class="grid3">
+<div class="card"><strong>1 · Understand</strong><p>What is the actual problem? What are the constraints?</p></div>
+<div class="card"><strong>2 · Design</strong><p>Break it down. Compare possible approaches.</p></div>
+<div class="card"><strong>3 · Implement</strong><p>Code → test → analyze → improve.</p></div>
+</div>
+<p class="quote" style="margin-top:28px">Learn algorithms to develop your thinking — not only to pass an interview.</p>
+</section>
+
+<section class="slide center" data-note="Interactive question: ask students to name the first 5 data structures/algorithm topics they would learn. Then reveal the sequence.">
+<div class="kicker">06 · DSA</div><h2>Start simple.</h2>
+<div class="pillrow" style="justify-content:center">
+<span class="pill">Array</span><span class="pill">Linked List</span><span class="pill">Stack</span><span class="pill">Queue</span><span class="pill">Tree</span><span class="pill">Graph</span><span class="pill">Hashing</span><span class="pill">Sorting</span><span class="pill">Searching</span>
+</div>
+<p class="big" style="margin-top:35px">Consistency &gt; intensity.</p>
+<p>1–2 good problems regularly can beat a 100-problem sprint followed by six months of nothing.</p>
+</section>
+
+<section class="slide" data-note="This is a key message. Explain that claiming a skill is easy; evidence is harder. Use GitHub as one practical way to show work.">
+<div class="kicker">07 · Stand out</div><h2>Skill → Evidence → Communication</h2>
+<div class="grid3">
+<div class="card"><strong>Skill</strong><p>“I know iOS development.”</p></div>
+<div class="card"><strong>Evidence</strong><p>“Here are projects I built and code I can show.”</p></div>
+<div class="card"><strong>Communication</strong><p>“Here is why I designed it this way and what I learned.”</p></div>
+</div>
+<p class="quote" style="margin-top:30px">Don't just say you can do it. Show it. Then explain it.</p>
+</section>
+
+<section class="slide" data-note="Tell students projects do not need to be huge. A small project you deeply understand is stronger than a copied “AI project” you cannot explain.">
+<div class="kicker">08 · Projects</div><h2>Build something<br>you understand.</h2>
+<div class="checklist">
+<div class="check">Solve a real or interesting problem</div><div class="check">Keep the scope manageable</div>
+<div class="check">Write the code yourself</div><div class="check">Document what you learned</div>
+<div class="check">Put selected work on GitHub</div><div class="check">Be ready to explain your decisions</div>
+</div>
+</section>
+
+<section class="slide center" data-note="Ask for a show of hands: who has GitHub? Then ask who has a project they would be comfortable showing to an interviewer today. This creates a useful gap for them to notice.">
+<div class="kicker">09 · Question</div><h2>Quick reality check.</h2>
+<div class="grid3">
+<div class="card poll"><div class="num">A</div><strong>Do you have GitHub?</strong><p>Click your answer</p><div class="answer">Good. Now make it useful.</div></div>
+<div class="card poll"><div class="num">B</div><strong>Do you have a project?</strong><p>Click your answer</p><div class="answer">Can you explain it without slides?</div></div>
+<div class="card poll"><div class="num">C</div><strong>Can you show your code?</strong><p>Click your answer</p><div class="answer">Evidence makes skills visible.</div></div>
+</div>
+</section>
+
+<section class="slide" data-note="Explain that a fresher CV should be honest and focused. Do not encourage students to stuff every technology or certificate into one page.">
+<div class="kicker">10 · CV / Resume</div><h2>Your CV should answer:<br>“Why this candidate?”</h2>
+<div class="grid">
+<div class="card"><strong>Include</strong><p>Education · relevant skills · projects · internship/work · GitHub · achievements</p></div>
+<div class="card"><strong>Avoid</strong><p>Fake expertise · huge technology lists · irrelevant certificates · inflated claims</p></div>
+</div>
+<p class="quote" style="margin-top:28px">Be confident about what you actually know.</p>
+</section>
+
+<section class="slide center" data-note="Mention channels broadly: company career pages, LinkedIn, Bdjobs, university opportunities, career fairs, referrals. Avoid implying any one route guarantees access.">
+<div class="kicker">11 · Applying</div><h2>Don't wait for<br>one perfect opportunity.</h2>
+<div class="grid3">
+<div class="card"><strong>Company careers</strong><p>Check official openings.</p></div>
+<div class="card"><strong>Job platforms</strong><p>LinkedIn · Bdjobs · university channels</p></div>
+<div class="card"><strong>Professional network</strong><p>Referrals and genuine connections</p></div>
+</div>
+<p class="big" style="margin-top:30px">Don't reject yourself before the company does.</p>
+</section>
+
+<section class="slide center" data-note="This is a useful interactive poll. Ask students to choose one. Then explain that both matter, and exact requirements vary by company and role.">
+<div class="kicker">12 · The classic question</div><h2>CGPA or skills?</h2>
+<div class="grid" style="margin-top:15px">
+<div class="card poll"><div class="num">A</div><strong>CGPA</strong><p>“Companies only care about results.”</p><div class="answer">Academic eligibility can matter.</div></div>
+<div class="card poll"><div class="num">B</div><strong>Skills</strong><p>“CGPA doesn't matter at all.”</p><div class="answer">Technical ability matters too.</div></div>
+</div>
+<p class="quote" style="margin-top:28px">Both. Don't create a false competition between them.</p>
+</section>
+
+<section class="slide" data-note="Be careful not to state Samsung's current eligibility as a universal rule unless you verify the specific job posting. You can say some MNC roles have minimum academic requirements, and students should keep a good result.">
+<div class="kicker">13 · A practical balance</div><h2>Result gets you<br>considered. Skill helps you<br>get selected.</h2>
+<div class="grid">
+<div class="card"><strong>Academic result</strong><p>Maintain a good standing and don't ignore your coursework.</p></div>
+<div class="card"><strong>Technical ability</strong><p>Build skills you can demonstrate through problems, projects and interviews.</p></div>
+</div>
+<p class="small" style="margin-top:20px">Requirements vary by company, role and recruitment cycle. Always check the current job description.</p>
+</section>
+
+<section class="slide" data-note="Frame AI as a shift, not a disaster. The key message: AI should amplify reasoning, not replace it.">
+<div class="kicker">14 · The AI era</div><h2>AI changes the workflow.<br>It doesn't remove the need to think.</h2>
+<div class="ai">
+<div class="card"><strong>Don't</strong><p>Problem → AI → Copy → Submit → Forget</p></div>
+<div class="arrow">→</div>
+<div class="card"><strong>Do</strong><p>Think → Design → Implement → Test → Use AI → Review → Understand</p></div>
+</div>
+</section>
+
+<section class="slide center" data-note="Ask: “If AI gives you code, what can you do to prove it is correct?” Take answers: tests, edge cases, complexity, security, requirements, review.">
+<div class="kicker">15 · Question</div><h2>AI gives you code.<br>Now what?</h2>
+<div class="grid3">
+<div class="card poll"><strong>Understand it?</strong><p>Can you explain every important part?</p><div class="answer">If not, stop and learn.</div></div>
+<div class="card poll"><strong>Test it?</strong><p>What happens with edge cases?</p><div class="answer">Tests are your responsibility.</div></div>
+<div class="card poll"><strong>Challenge it?</strong><p>Is this the best solution?</p><div class="answer">Review complexity and trade-offs.</div></div>
+</div>
+</section>
+
+<section class="slide" data-note="Give this as the checklist students can screenshot. Encourage them to choose the next step based on their current year.">
+<div class="kicker">16 · Your roadmap</div><h2>10 things to do.</h2>
+<div class="checklist">
+<div class="check">Learn programming properly</div><div class="check">Strengthen CS fundamentals</div>
+<div class="check">Learn DSA</div><div class="check">Practice problem solving</div>
+<div class="check">Build 2–3 meaningful projects</div><div class="check">Make your work visible</div>
+<div class="check">Maintain a good academic result</div><div class="check">Improve communication</div>
+<div class="check">Prepare an honest CV</div><div class="check">Apply consistently</div>
+</div>
+</section>
+
+<section class="slide center" data-note="Close slowly. Pause after each bold idea. Thank the audience and invite questions.">
+<div class="kicker">17 · Final message</div>
+<h2>Don't panic about<br>the future.</h2>
+<p class="big">Build your foundation. Practice consistently. Build something. Show what you can do. Use AI — but don't let AI think for you.</p>
+<p class="quote" style="margin-top:28px">Your first job is not the destination. Your ability to learn, solve problems and adapt is.</p>
+<div class="pillrow" style="justify-content:center"><span class="pill">Questions?</span><span class="pill">Let's discuss.</span></div>
+</section>
+
+</div>
+<div class="progress" id="progress"></div>
+<div class="counter" id="counter"></div>
+<div class="controls"><button class="btn" onclick="prev()">←</button><button class="btn" onclick="next()">→</button></div>
+<button class="btn note" onclick="toggleNotes()">Speaker notes</button>
+<div class="notes" id="notes"></div>
+<script>
+let i=0;
+const slides=[...document.querySelectorAll('.slide')];
+const progress=document.getElementById('progress'), counter=document.getElementById('counter'), notes=document.getElementById('notes');
+function show(n){
+ i=Math.max(0,Math.min(slides.length-1,n));
+ slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+ progress.style.width=((i+1)/slides.length*100)+'%';
+ counter.textContent=(i+1)+' / '+slides.length;
+ notes.innerHTML='<b>Speaker notes</b><p>'+ (slides[i].dataset.note||'') +'</p>';
+ history.replaceState(null,'','#'+(i+1));
+}
+function next(){show(i+1)} function prev(){show(i-1)}
+function toggleNotes(){notes.classList.toggle('show')}
+document.addEventListener('keydown',e=>{
+ if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();next()}
+ if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();prev()}
+ if(e.key.toLowerCase()==='n')toggleNotes();
+ if(e.key==='Home')show(0); if(e.key==='End')show(slides.length-1);
+});
+document.querySelectorAll('.poll').forEach(x=>x.addEventListener('click',()=>x.classList.toggle('selected')));
+const start=Math.max(0,Math.min(slides.length-1,(parseInt(location.hash.slice(1))||1)-1)); show(start);
+</script>
+</body>
+</html>
